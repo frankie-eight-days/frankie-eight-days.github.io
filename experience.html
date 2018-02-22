@@ -1,0 +1,363 @@
+<!DOCTYPE HTML>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Franics Walsh - Experience</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<style>
+      	#map {
+        width: 100%;
+        height: 400px;
+        background-color: grey;
+      		}
+      	li {
+    		margin: 0;
+    		padding: 0em;
+    	}
+    	p{
+    		margin: 00;
+    		padding: 1px;
+    	}
+    	i{
+    		padding:5px;
+    	}
+    </style>
+	</head>
+	<body>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+				<!-- Note: The "styleN" class below should match that of the banner element. -->
+					<header id="header" class="alt style2">
+						<a href="index.html" class="logo"><strong>Francis Walsh</strong> <span>Electrical Engineering Co-op Student</span></a>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+<!-- Menu -->
+					<<nav id="menu">
+						<ul class="links">
+							<li><a href="index.html">Home</a></li>
+							<li><a href="aboutMe.html">About me</a></li>
+							<li><a href="experience.html">Experience</a></li>
+							<li><a href="projects.html">Projects</a></li>
+							<li><a href="intrests.html">Interests</a></li>
+							<li><a href="frankRes.pdf">Resume</a></li>
+						</ul>
+					</nav>
+
+				<!-- Banner -->
+				<!-- Note: The "styleN" class below should match that of the header element. -->
+					<section id="banner" class="style2">
+						<div class="inner">
+							<span class="image">
+								<img src="images/experience/experienceBanner.jpg" alt="" />
+							</span>
+							<header class="major">
+								<h1>Experience</h1>
+							</header>
+							<div class="content">
+								<p>Where I've worked in the past.</p>
+							</div>
+						</div>
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- One -->
+							<section id="one">
+								<div class="inner">
+								<span class="inner">
+									<ul class="actions">
+										<li><a href="#one" class="button next scrolly">Interactive Map</a></li>
+										<li><a href="#two" class="button next scrolly">Nokia</a></li>
+										<li><a href="#three" class="button next scrolly">Nalcor Energy</a></li>
+										<li><a href="#four" class="button next scrolly">Department of National Defence</a></li>
+									</ul>
+								</span>
+										<h1>The places I've worked:</h1>
+									<div id="map"></div>
+									 <script>
+      									function initMap() {
+        									var nalcorOffice = {lat: 47.604194, lng:  -52.715279};
+        									var hawkesBay = {lat: 50.610298, lng: -57.169672};
+        									var eagleCamp = {lat: 52.8852777, lng: -59.31972222};
+        									var forteau = {lat: 51.481541, lng: -56.951735};
+        									var debert = {lat: 45.423823, lng: -63.450980};
+        									var nokia = {lat: 45.347592, lng: -75.920763}
+        									var map = new google.maps.Map(document.getElementById('map'), {
+          									zoom: 5,
+          									center: {lat: 49.247260, lng: -60.897703}
+        									});
+        									
+        									var infowindow = new google.maps.InfoWindow({
+											    content: '<font color="black"><h2 style="color:black;">St. Johns</h2><img ALIGN="Center" style="max-width:400px;height:auto;" src="images/experience/map/nalcor.jpg">'+
+											    '<p>During my time at Nalcor I worked here when I was not in the field.</p></font>',
+											});
+        									var marker = new google.maps.Marker({
+          										position: nalcorOffice,
+          										title: 'Nalcor Home Office',
+          										animation: google.maps.Animation.DROP,
+          										label: 'NE',
+          										map: map
+        									});
+											marker.addListener('click', function() {
+    											infowindow.setOptions({maxWidth:400});
+    											infowindow.open(map, marker);
+  											});
+
+											var infowindow2 = new google.maps.InfoWindow({
+											    content: '<font color="black"><h2 style="color:black;">Hawkes Bay</h2><img ALIGN="Center" style="max-width:400px;height:auto;" src="images/experience/map/hawkesBay.jpg">'+
+											    '<p>While working for Nalcor I completed one three week rotation inspceting steel structures in northern Newfoundland.</p></font>',
+											});
+        									var marker2 = new google.maps.Marker(
+        									{
+        										position: hawkesBay,
+        										title: 'Hawkes Bay',
+        										animation: google.maps.Animation.DROP,
+        										label: 'NE',
+        										map: map
+        									});
+        									marker2.addListener('click', function() {
+    											infowindow2.setOptions({maxWidth:400});
+    											infowindow2.open(map, marker2);
+  											});
+
+        									var infowindow3 = new google.maps.InfoWindow({
+											    content: '<font color="black"><h2 style="color:black;">Eagle Camp</h2><img ALIGN="Center" style="max-width:400px;height:auto;" src="images/experience/map/eagleCamp.jpg">'+
+											    '<p>A temporary camp I stayed at while working in Central Labrador. I completed one three week rotation here.</p></font>',
+											});
+        									var marker3 = new google.maps.Marker({
+        										position: eagleCamp,
+        										animation: google.maps.Animation.DROP,
+        										title: 'Hawkes Bay, NL',
+        										label: 'NE',
+        										map: map
+        									});
+        									marker3.addListener('click', function() {
+    											infowindow3.setOptions({maxWidth:400});
+    											infowindow3.open(map, marker3);
+  											});
+
+        									var infowindow4 = new google.maps.InfoWindow({
+											    content: '<font color="black"><h2 style="color:black;">Forteau</h2><img ALIGN="Center" style="max-width:400px;height:auto;" src="images/experience/map/forteau.jpg">'+
+											    '<p>While working for Nalcor I completed one three week rotation inspceting steel structures in southern Labrador.</p></font>',
+											});
+        									var marker4 = new google.maps.Marker({
+        										position: forteau,
+        										animation: google.maps.Animation.DROP,
+        										title: 'Forteau',
+        										label: 'NE',
+        										map: map
+        									});
+        									marker4.addListener('click', function() {
+    											infowindow4.setOptions({maxWidth:400});
+    											infowindow4.open(map, marker4);
+  											});
+
+
+        									var infowindow5 = new google.maps.InfoWindow({
+											    content: '<font color="black"><h2 style="color:black;">Debert Aerodrome</h2><img ALIGN="Center" style="max-width:400px;height:auto;" src="images/experience/map/debert.jpg">'+
+											    '<p>Where I worked as a ground crew supervisor for the Department of National Defence. This was for a summer job fresh out of highschool.</p></font>',
+											});
+        									var marker5 = new google.maps.Marker({
+        										position: debert,
+        										animation: google.maps.Animation.DROP,
+        										title: 'Debert Aerodrome',
+        										label: 'C',
+        										map: map
+        									});
+        									marker5.addListener('click', function() {
+    											infowindow5.setOptions({maxWidth:400});
+    											infowindow5.open(map, marker5);
+  											});
+
+        									var infowindow6 = new google.maps.InfoWindow({
+											    content: '<font color="black"><h2 style="color:black;">Nokia</h2><img ALIGN="Center" style="max-width:400px;height:auto;" src="images/experience/map/nokia.jpg">'+
+											    '<p>Where I completed my second workterm as a Hardware Support Engineer.</p></font>',
+											});
+        									var marker6 = new google.maps.Marker({
+        										position: nokia,
+        										animation: google.maps.Animation.DROP,
+        										title: 'Nokia',
+        										label: 'NO',
+        										map: map
+        									})
+        									marker6.addListener('click', function() {
+    											infowindow6.setOptions({maxWidth:400}); 
+    											infowindow6.open(map, marker6);
+  											});
+      										}				
+    									</script>
+    									<script async defer
+    										src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQiOquKSJnz8yI_XXsTpgVFVq_lYC8DqM&callback=initMap">
+    									</script>
+									<p>The marker labels are as follows: NE for Nalcor Energy, C for Cadets and NO for Nokia.</p>
+								</div>
+							</section>
+
+						<!-- Two -->
+							<section id="two" class="spotlights">
+								<section>
+									<a href="experience.html" class="image">
+										<img src="images/experience/nokia.jpg" alt="" data-position="center center" />
+									</a>
+									<div class="content">
+										<div class="inner">
+											<header class="major">
+												<h3>Nokia</h3>
+												<p>Kanata, Ontario</p>
+												<p>Jan 2018 - April 2018</p>
+											</header>
+											<p>This is where I completed my second and most recent work term. While working here my responsiblities included:
+												<ul class="fa-ul">
+													<li><i class="fa fa-wifi"></i>Diagnosing and repairing prototype server boards</li>
+													<li><i class="fa fa-wifi"></i>Writing scripts in Perl to automate tedious tasks</li>
+													<li><i class="fa fa-wifi"></i>Used various state of the art instruments to verify hardware</li>
+												</ul>
+											</p>
+										</div>
+									</div>
+								</section>
+								<section id="three">
+									<a href="experience.html" class="image">
+										<img src="images/experience/nalcor.jpg" alt="" data-position="25% 25%" />
+									</a>
+									<div class="content">
+										<div class="inner">
+											<header class="major">
+												<h3>Nalcor Energy</h3>
+												<p>All Over Newfoundland and Labrador</p>
+												<p>May 2017 - Sept. 2017</p>
+											</header>
+											<p>This is where I completed my second workterm in the summer of 2017. My work here was split 50%/50% between field work and office work. The work included:
+												<ul class="fa-ul">
+													<li><i class="fa fa-bolt"></i>Conducting inspections of newly built HVdc and HVac tranmission lines</li>
+													<li><i class="fa fa-bolt"></i>Communicating and directing contractor re-work</li>
+													<li><i class="fa fa-bolt"></i>Developing scripts in VBA and Python for future employee use</li>
+													<li><i class="fa fa-bolt"></i>Developing/delivering training to personnel for use of the Project Completions System</li>
+												</ul>
+											</p>
+										</div>
+									</div>
+								</section>
+								<section id="four">
+									<a href="experience.html" class="image">
+										<img src="images/experience/dnd.jpg" alt="" data-position="25% 25%" />
+									</a>
+									<div class="content">
+										<div class="inner">
+											<header class="major">
+												<h3>Department of National Defence</h3>
+												<p>Debert, Nova Scotia</p>
+												<p>June 2016 - Aug. 2016</p>
+											</header>
+											<p>This was my sixth and last cadet summer placement. While there I worked as a ground crew supervisor, duties included:
+												<ul class="fa-ul">
+													<li><i class="fa fa-fighter-jet"></i>Orchestrated the retrieval of landed glider aircraft at active airport</li>
+													<li><i class="fa fa-fighter-jet"></i>Trained cadet personnel of safety protocols</li>
+													<li><i class="fa fa-fighter-jet"></i>Conducted daily inspections of air and land based vehicles</li>
+													<li><i class="fa fa-fighter-jet"></i>Acted as a liaison between adult staff, other camp counselors and cadet personnel</li>
+												</ul>
+											</p>
+										</div>
+									</div>
+								</section>
+							</section>
+
+					</div>
+
+				<!-- Contact -->
+					<section id="contact">
+						<div class="inner">
+							<section>
+								<form method="post" action="#">
+									<div class="field half first">
+										<label for="name">Name</label>
+										<input type="text" name="name" id="name" />
+									</div>
+									<div class="field half">
+										<label for="email">Email</label>
+										<input type="text" name="email" id="email" />
+									</div>
+									<div class="field">
+										<label for="message">Message</label>
+										<textarea name="message" id="message" rows="6"></textarea>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Send Message" class="special" /></li>
+										<li><input type="reset" value="Clear" /></li>
+									</ul>
+								</form>
+							</section>
+							<section class="split">
+								<section>
+									<div class="contact-method">
+										<span class="icon alt fa-envelope"></span>
+										<h3>Email</h3>
+										<a href="#">fkw155@mun.ca</a>
+									</div>
+								</section>
+								<section>
+									<div class="contact-method">
+										<span class="icon alt fa-phone"></span>
+										<h3>Phone</h3>
+										<span>(709)-764-7076</span>
+									</div>
+								</section>
+								<section>
+									<div class="contact-method">
+										<span class="icon alt fa-home"></span>
+										<h3>Address</h3>
+										<span>6 Ellacombe Street<br />
+										Torbay, Newfoundland<br />
+										Canada</span>
+									</div>
+								</section>
+							</section>
+						</div>
+					</section>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<ul class="icons">
+								<li><a href="#" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
+								<li><a href="#" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
+								<li><a href="#" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
+								<li><a href="#" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
+								<li><a href="#" class="icon alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+							</ul>
+							<ul class="copyright">
+								<li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
