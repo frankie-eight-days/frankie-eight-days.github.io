@@ -1,0 +1,303 @@
+<!DOCTYPE HTML>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Franics Walsh - Experience</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<style>
+      	#map {
+        width: 100%;
+        height: 400px;
+        background-color: grey;
+      		}
+      	li {
+    		margin: 0;
+    		padding: 0em;
+    	}
+    	p{
+    		margin: 00;
+    		padding: 1px;
+    	}
+    	i{
+    		padding:5px;
+    	}
+    </style>
+	</head>
+	<body>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+				<!-- Note: The "styleN" class below should match that of the banner element. -->
+					<header id="header" class="alt style2">
+						<a href="index.html" class="logo"><strong>Francis Walsh</strong> <span>Electrical Engineering Co-op Student</span></a>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+<!-- Menu -->
+					<<nav id="menu">
+						<ul class="links">
+							<li><a href="index.html">Home</a></li>
+							<li><a href="aboutMe.html">About me</a></li>
+							<li><a href="experience.html">Experience</a></li>
+							<li><a href="projects.html">Projects</a></li>
+							<li><a href="intrests.html">Interests</a></li>
+							<li><a href="frankRes.pdf">Resume</a></li>
+						</ul>
+					</nav>
+
+				<!-- Banner -->
+				<!-- Note: The "styleN" class below should match that of the header element. -->
+					<section id="banner" class="style2">
+						<div class="inner">
+							<span class="image">
+								<img src="images/hackathons.jpg" alt="" />
+							</span>
+							<header class="major">
+								<h1>Hackathons</h1>
+							</header>
+							<div class="content">
+								<p>Hackathons I've attended.</p>
+							</div>
+						</div>
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- One -->
+							<section id="one">
+								<div class="inner">
+								<span class="inner">
+									<ul class="actions">
+										<li><a href="#one" class="button next scrolly">Interactive Map</a></li>
+										<li><a href="#two" class="button next scrolly">UOttaHacks</a></li>
+										<li><a href="#three" class="button next scrolly">SteelHacks</a></li>
+										<li><a href="#four" class="button next scrolly">SFHacks</a></li>
+									</ul>
+								</span>
+										<h1>The places I've hacked:</h1>
+									<div id="map"></div>
+									 <script>
+      									function initMap() {
+        									var uOttawa = {lat: 45.422581, lng: -75.682942};
+        									var uPitt = {lat: 40.444312, lng: -79.961532};
+        									var uSF = {lat: 37.722381, lng: -122.478923};
+        									var map = new google.maps.Map(document.getElementById('map'), {
+          									zoom: 4,
+          									center: {lat: 42.052605,lng: -92.453070}
+        									});
+        									
+        									var infowindow = new google.maps.InfoWindow({
+											    content: '<font color="black"><h2 style="color:black;">UOttaHack</h2><img ALIGN="Center" style="max-width:400px;height:auto;" src="images/hackathons/uOttaHack.jpg">'+
+											    '<p>My first ever hackathon!</p></font>',
+											});
+        									var marker = new google.maps.Marker({
+          										position: uOttawa,
+          										title: 'Ottawa, Canada',
+          										animation: google.maps.Animation.DROP,
+          										label: 'UO',
+          										map: map
+        									});
+											marker.addListener('click', function() {
+    											infowindow.setOptions({maxWidth:400});
+    											infowindow.open(map, marker);
+  											});
+
+											var infowindow2 = new google.maps.InfoWindow({
+											    content: '<font color="black"><h2 style="color:black;">SteelHacks</h2><img ALIGN="Center" style="max-width:400px;height:auto;" src="images/hackathons/steelHacks.jpg">'+
+											    '<p>Second ever hackathon!</p></font>',
+											});
+        									var marker2 = new google.maps.Marker(
+        									{
+        										position: uPitt,
+        										title: 'Pittsburgh, USA',
+        										animation: google.maps.Animation.DROP,
+        										label: 'UP',
+        										map: map
+        									});
+        									marker2.addListener('click', function() {
+    											infowindow2.setOptions({maxWidth:400});
+    											infowindow2.open(map, marker2);
+  											});
+
+        									var infowindow3 = new google.maps.InfoWindow({
+											    content: '<font color="black"><h2 style="color:black;">Eagle Camp</h2><img ALIGN="Center" style="max-width:400px;height:auto;" src="images/experience/map/eagleCamp.jpg">'+
+											    '<p>A temporary camp I stayed at while working in Central Labrador. I completed one three week rotation here.</p></font>',
+											});
+        									var marker3 = new google.maps.Marker({
+        										position: uSF,
+        										animation: google.maps.Animation.DROP,
+        										title: 'Hawkes Bay, NL',
+        										label: 'NE',
+        										map: map
+        									});
+        									marker3.addListener('click', function() {
+    											infowindow3.setOptions({maxWidth:400});
+    											infowindow3.open(map, marker3);
+  											});
+      										}				
+    									</script>
+    									<script async defer
+    										src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQiOquKSJnz8yI_XXsTpgVFVq_lYC8DqM&callback=initMap">
+    									</script>
+								</div>
+							</section>
+
+						<!-- Two -->
+							<section id="two" class="spotlights">
+								<section>
+									<a href="experience.html" class="image">
+										<img src="images/hackathons/sfHacks.jpg" alt="" data-position="center center" />
+									</a>
+									<div class="content">
+										<div class="inner">
+											<header class="major">
+												<h3>SFHacks</h3>
+												<p>San Francisco, California, USA</p>
+												<p>March 2018</p>
+											</header>
+											<p>Stay tuned!!
+											</p>
+										</div>
+									</div>
+								</section>
+								<section id="three">
+									<a href="experience.html" class="image">
+										<img src="images/hackathons/steelHacksDisplay.png" alt="" data-position="25% 25%" />
+									</a>
+									<div class="content">
+										<div class="inner">
+											<header class="major">
+												<h3>SteelHacks</h3>
+												<p>Pittsburgh, Pennslivanya, USA</p>
+												<p>Feb. 2018</p>
+											</header>
+											<p>This hackathon took place at the university of Pittsburgh. Myself and my team member drove 10 hours to get there. While there we created a software package to detect whether or not somebody is sleeping. Some possible applications of this project could be to help keep drivers, pilots and heavy equipment operators alert, help identify if someone is having a stroke or keep sleepy students awake when they are cramming! To see the full project see our devpost <a href="https://devpost.com/software/dri-c-ve">here.</a>
+											</p>
+
+											<p>
+												
+											</p>
+										</div>
+									</div>
+								</section>
+								<section id="four">
+									<a href="experience.html" class="image">
+										<img src="images/experience/dnd.jpg" alt="" data-position="25% 25%" />
+									</a>
+									<div class="content">
+										<div class="inner">
+											<header class="major">
+												<h3>Department of National Defence</h3>
+												<p>Debert, Nova Scotia</p>
+												<p>June 2016 - Aug. 2016</p>
+											</header>
+											<p>This was my sixth and last cadet summer placement. While there I worked as a ground crew supervisor, duties included:
+												<ul class="fa-ul">
+													<li><i class="fa fa-fighter-jet"></i>Orchestrated the retrieval of landed glider aircraft at active airport</li>
+													<li><i class="fa fa-fighter-jet"></i>Trained cadet personnel of safety protocols</li>
+													<li><i class="fa fa-fighter-jet"></i>Conducted daily inspections of air and land based vehicles</li>
+													<li><i class="fa fa-fighter-jet"></i>Acted as a liaison between adult staff, other camp counselors and cadet personnel</li>
+												</ul>
+											</p>
+										</div>
+									</div>
+								</section>
+							</section>
+
+					</div>
+
+				<!-- Contact -->
+					<section id="contact">
+						<div class="inner">
+							<section>
+								<form method="post" action="#">
+									<div class="field half first">
+										<label for="name">Name</label>
+										<input type="text" name="name" id="name" />
+									</div>
+									<div class="field half">
+										<label for="email">Email</label>
+										<input type="text" name="email" id="email" />
+									</div>
+									<div class="field">
+										<label for="message">Message</label>
+										<textarea name="message" id="message" rows="6"></textarea>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Send Message" class="special" /></li>
+										<li><input type="reset" value="Clear" /></li>
+									</ul>
+								</form>
+							</section>
+							<section class="split">
+								<section>
+									<div class="contact-method">
+										<span class="icon alt fa-envelope"></span>
+										<h3>Email</h3>
+										<a href="#">fkw155@mun.ca</a>
+									</div>
+								</section>
+								<section>
+									<div class="contact-method">
+										<span class="icon alt fa-phone"></span>
+										<h3>Phone</h3>
+										<span>(709)-764-7076</span>
+									</div>
+								</section>
+								<section>
+									<div class="contact-method">
+										<span class="icon alt fa-home"></span>
+										<h3>Address</h3>
+										<span>6 Ellacombe Street<br />
+										Torbay, Newfoundland<br />
+										Canada</span>
+									</div>
+								</section>
+							</section>
+						</div>
+					</section>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<ul class="icons">
+								<li><a href="#" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
+								<li><a href="#" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
+								<li><a href="#" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
+								<li><a href="#" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
+								<li><a href="#" class="icon alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+							</ul>
+							<ul class="copyright">
+								<li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
