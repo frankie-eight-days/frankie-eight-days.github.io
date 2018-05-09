@@ -32,6 +32,8 @@ var rightPressed = false;
 var up = false;
 var down = false;
 
+var gameStart = false;
+
 var numberOfClouds = 2;
 var cloudWidth = 240;
 var cloudHeight = 15;
@@ -50,6 +52,7 @@ for(i=0; i < numberOfClouds; i++)
 
 document.addEventListener("keydown", keyDownHandler, false);
 document.addEventListener("keyup", keyUpHandler, false);
+document.addEventListener("click", getGameStart);
 
 function getRandomInt(min, max) 
 {
@@ -87,6 +90,20 @@ function keyUpHandler(e)
 	{
 		y = 0;
 	}
+}
+
+function getGameStart()
+{
+	if(!gameStart)
+	{
+		gameStart = true;
+	}else
+	{
+		gameStart = false;
+		x = 200;
+		y = 0;
+	}
+
 }
 
 function drawPlayer()
@@ -205,12 +222,23 @@ function drawBackgroundImage()
 
 function gameloop()
 {
-	ctx.clearRect(0, 0, canvas.width, canvas.height);
-	drawBackgroundImage();
-	movePlatforms();
-	drawPlayer();
-	drawClouds();
-	cloudHitDetection();
-	playerMovement();
+	if(gameStart)
+	{
+		ctx.clearRect(0, 0, canvas.width, canvas.height);
+		drawBackgroundImage();
+		movePlatforms();
+		drawPlayer();
+		drawClouds();
+		cloudHitDetection();
+		playerMovement();
+
+	}else
+	{
+		drawBackgroundImage();
+		ctx.font = "30px Arial";
+		ctx.fillStyle = "black";
+		ctx.fillText("Click To Play!",140,180);
+	}
+
 }
 setInterval(gameloop, 5);
